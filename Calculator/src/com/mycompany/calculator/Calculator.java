@@ -47,8 +47,9 @@ public class Calculator {
         // Student Number 1 , add your code here
     }
 
-    public static void subtract(double num1, double num2) {
-        // Student Number 2, add your code here
+    public static double subtract(double num1, double num2) {
+       return num1 - num2;
+
     }
 
     public static double multiply(double num1, double num2) {
