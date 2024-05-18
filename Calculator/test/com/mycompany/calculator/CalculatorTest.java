@@ -1,20 +1,57 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit5TestClass.java to edit this template
- */
 package com.mycompany.calculator;
 
 import com.mycompany.calculator.Calculator;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
-/**
- *
- * @author khoza
- */
 public class CalculatorTest {
 
-@Test
+    @Test
+    public void testAddPositiveNumbers() {
+        double num1 = 5.0;
+        double num2 = 3.0;
+        double expected = 8.0;
+        double result = Calculator.add(num1, num2);
+        assertEquals(expected, result, 0.0001); // delta added for double comparison
+    }
+
+    @Test
+    public void testAddNegativeNumbers() {
+        double num1 = -5.0;
+        double num2 = -3.0;
+        double expected = -8.0;
+        double result = Calculator.add(num1, num2);
+        assertEquals(expected, result, 0.0001);
+    }
+
+    @Test
+    public void testAddPositiveAndNegativeNumbers() {
+        double num1 = 5.0;
+        double num2 = -3.0;
+        double expected = 2.0;
+        double result = Calculator.add(num1, num2);
+        assertEquals(expected, result, 0.0001);
+    }
+
+    @Test
+    public void testAddZero() {
+        double num1 = 5.0;
+        double num2 = 0.0;
+        double expected = 5.0;
+        double result = Calculator.add(num1, num2);
+        assertEquals(expected, result, 0.0001);
+    }
+
+    @Test
+    public void testAddZeroToZero() {
+        double num1 = 0.0;
+        double num2 = 0.0;
+        double expected = 0.0;
+        double result = Calculator.add(num1, num2);
+        assertEquals(expected, result, 0.0001);
+    }
+
+    @Test
     public void multiplyPostive() {
         // Normal Multiplaction
         double num1 = 10;
@@ -53,8 +90,8 @@ public class CalculatorTest {
         double result = Calculator.multiply(num1, num2);
         assertEquals(expected, result, 0.0001);
     }
-    
-     @Test
+
+    @Test
     public void divideNormal() {
         // Normal Division
         double num1 = 10;
@@ -93,5 +130,5 @@ public class CalculatorTest {
         double result = Calculator.divide(num1, num2);
         assertEquals(expected, result, 0.0001);
     }
-    
+
 }
